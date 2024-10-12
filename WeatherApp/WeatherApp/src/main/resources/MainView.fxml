@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fi.tuni.prog3.weatherapp.controller.MainViewController">
+    <fx:include prefHeight="600" prefWidth="200" source="/Menu.fxml"/>
+    <AnchorPane fx:id="contentId" layoutX="199.2" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="601.0"
+                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0"/>
+</AnchorPane>

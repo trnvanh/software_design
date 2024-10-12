@@ -1,0 +1,4 @@
+#menuLayout {
+    fx-border-color: transparent transparent transparent black;
+    -fx-border-width: 0 2px 0 0;
+}

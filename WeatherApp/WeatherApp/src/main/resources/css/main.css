@@ -1,0 +1,41 @@
+#root {
+    -fx-background-image: url('../images/giphy.gif');
+    -fx-background-size: cover;
+}
+
+.listComponentPane {
+    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    -fx-background-radius: 10px;
+}
+
+
+.componentForecast {
+    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    -fx-background-radius: 10px;
+}
+.componentForecast:hover {
+    -fx-background-color: linear-gradient(rgba(0, 255, 255, 0.7), rgba(0, 255, 255, 0.5));
+}
+
+
+#detailWeather {
+    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+
+.componentDetailForecast {
+    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+}
+
+#nav {
+    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+}
+
+.btn {
+    -fx-background-color: rgba(255, 255, 255, 1);
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn:hover {
+    -fx-background-color:rgba(0, 255, 255, 1);
+}
