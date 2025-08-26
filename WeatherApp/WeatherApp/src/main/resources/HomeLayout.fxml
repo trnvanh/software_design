@@ -1,53 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="fi.tuni.prog3.weatherapp.controller.HomeController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.tuni.prog3.weatherapp.controller.HomeController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="176.0" layoutY="71.2" prefHeight="529.0" prefWidth="593.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0">
+      <VBox alignment="TOP_CENTER" layoutY="63.0" prefHeight="475.0" prefWidth="600.0" AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="63.0">
          <children>
-            <Label text="Smart activity planner">
+            <Label styleClass="labelTitle" stylesheets="@css/main.css" text="AeroSky">
                <font>
-                  <Font name="System Bold" size="36.0" />
+                  <Font name="System Bold" size="30.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do you have plans for this weekend or in three months? See the weather forecast to know if the universe supports your plan." wrappingWidth="487.9999771118164">
+            <Label styleClass="labelSubTitle" stylesheets="@css/main.css" text="Your environmental personalized dashboard">
+               <font>
+                  <Font name="System Bold" size="24" />
+               </font>
                <VBox.margin>
                   <Insets bottom="10.0" />
                </VBox.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How to use this app? Search time-based weather data visualizations of a period by city name in Data. See the real-time weather info and 10-day forecast in Forecast. You can customize the settings (date, time, types of information displayed, activities) and save them in Settings." wrappingWidth="487.9999771118164">
+            </Label>
+            <Text fill="#5a8787" strokeType="OUTSIDE" strokeWidth="0.0" text="AeroSky is your personal environmental dashboard. Stay updated with real-time weather and air quality forecasts and data, track historical trends, and receive personalized health tips and activity suggestions based on local conditions. With global air tracking and customizable alerts, you can enjoy your life and live healthier." wrappingWidth="487.9999771118164">
                <VBox.margin>
                   <Insets bottom="30.0" />
                </VBox.margin>
             </Text>
-            <Label text="Please input the city name here">
+            <Label text="Please input the city name here" textFill="#5a8787">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <TextField fx:id="inputSearch" maxWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Search">
+            <TextField fx:id="inputSearch" onKeyPressed="#handleEnterPressed" maxWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Search">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </TextField>
-            <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-color: #6a6a6a;" styleClass="btnMenu" stylesheets="@css/menu.css" text="Search" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" styleClass="btn" stylesheets="@css/main.css" text="Search" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="16.0" />
                </font>

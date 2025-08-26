@@ -1,11 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="fi.tuni.prog3.weatherapp.controller.MainViewController">
-    <fx:include prefHeight="600" prefWidth="200" source="/Menu.fxml"/>
-    <AnchorPane fx:id="contentId" layoutX="199.2" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="601.0"
-                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="0.0"
-                AnchorPane.topAnchor="0.0"/>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="layout" stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.tuni.prog3.weatherapp.controller.MainViewController">
+    <VBox id="menuLayout" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="200.0" style="-fx-border-color: black;" stylesheets="@css/menu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <GridPane prefHeight="600.0" prefWidth="200.0">
+                <columnConstraints>
+                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <ImageView fitHeight="125.0" fitWidth="122.0" GridPane.rowIndex="1">
+                        <image>
+                            <Image url="@images/weather-109.png" />
+                        </image>
+                    </ImageView>
+                    <Button fx:id="btnHome" mnemonicParsing="false" onAction="#loadHomeLayout" prefHeight="40.0" prefWidth="150.0" styleClass="btnMenu" stylesheets="@css/menu.css" text="Home" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="Arial Bold" size="16.0" />
+                        </font>
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" height="1.0" offsetX="-7.0" offsetY="5.0" radius="0.0" width="0.0">
+                                <color>
+                                    <Color red="0.45490196347236633" green="0.8666666746139526" blue="0.8666666746139526" opacity="0.550000011920929" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                    </Button>
+                    <Button fx:id="btnData" mnemonicParsing="false" onAction="#loadDataLayout" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-color: #6a6a6a;" styleClass="btnMenu" stylesheets="@css/menu.css" text="Data" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                        <font>
+                            <Font name="Arial Bold" size="16.0" />
+                        </font>
+                  <effect>
+                     <DropShadow blurType="ONE_PASS_BOX" height="1.0" offsetX="-7.0" offsetY="5.0" radius="0.0" width="0.0">
+                        <color>
+                           <Color red="0.45490196347236633" green="0.8666666746139526" blue="0.8666666746139526" opacity="0.550000011920929" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+                    </Button>
+                    <Button fx:id="btnCurrent" mnemonicParsing="false" onAction="#loadCurrentLayout" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-color: #6a6a6a;" styleClass="btnMenu" stylesheets="@css/menu.css" text="Current" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+                        <font>
+                            <Font name="Arial Bold" size="16.0" />
+                        </font>
+                  <effect>
+                     <DropShadow blurType="ONE_PASS_BOX" height="1.0" offsetX="-7.0" offsetY="5.0" radius="0.0" width="0.0">
+                        <color>
+                           <Color red="0.45579999685287476" green="0.8600000143051147" blue="0.8600000143051147" opacity="0.550000011920929" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+                    </Button>
+                    <Button fx:id="btnFavorite" mnemonicParsing="false" onAction="#loadFavoriteLayout" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-color: #6a6a6a;" styleClass="btnMenu" stylesheets="@css/menu.css" text="Favorite" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
+                        <font>
+                            <Font name="Arial Bold" size="16.0" />
+                        </font>
+                  <effect>
+                     <DropShadow blurType="ONE_PASS_BOX" height="1.0" offsetX="-7.0" offsetY="5.0" radius="0.0" width="0.0">
+                        <color>
+                           <Color red="0.45579999685287476" green="0.8600000143051147" blue="0.8600000143051147" opacity="0.550000011920929" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+                    </Button>
+                    <Button fx:id="btnHistory" mnemonicParsing="false" onAction="#loadHistoryLayout" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-color: #6a6a6a;" styleClass="btnMenu" stylesheets="@css/menu.css" text="History" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+                        <font>
+                            <Font name="Arial Bold" size="16.0" />
+                        </font>
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" height="1.0" offsetX="-7.0" offsetY="5.0" radius="0.0" width="0.0">
+                                <color>
+                                    <Color red="0.45579999685287476" green="0.8600000143051147" blue="0.8600000143051147" opacity="0.550000011920929" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                    </Button>
+                    <Button fx:id="btnAccount" mnemonicParsing="false" onAction="#loadAccountLayout" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-background-color: #6a6a6a;" styleClass="btnMenu" stylesheets="@css/menu.css" text="Account" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="7">
+                        <font>
+                            <Font name="Arial Bold" size="16.0" />
+                        </font>
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" height="1.0" offsetX="-7.0" offsetY="5.0" radius="0.0" width="0.0">
+                                <color>
+                                    <Color red="0.45579999685287476" green="0.8600000143051147" blue="0.8600000143051147" opacity="0.550000011920929" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                    </Button>
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <ImageView fitHeight="40.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/logout.png" />
+                        </image>
+                     </ImageView>
+                     <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#loadLogInLayout" styleClass="btnMenu" stylesheets="@css/menu.css" text="Log out" />
+                  </children>
+               </HBox>
+                </children>
+            </GridPane>
+        </children>
+    </VBox>
+    <AnchorPane fx:id="content" layoutX="199.2" layoutY="513.0" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="601.0" AnchorPane.bottomAnchor="119.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   <AnchorPane layoutX="199.0" layoutY="552.0" prefHeight="48.0" prefWidth="601.0">
+      <children>
+         <Label fx:id="alertLabel" layoutX="87.0" layoutY="14.0" prefHeight="20.0" prefWidth="414.0" textFill="#fc0202">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
 </AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="layout" stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.tuni.prog3.weatherapp.controller.LogInController">
+    <VBox alignment="CENTER" layoutX="250" layoutY="150" maxWidth="350" spacing="15" style="-fx-padding: 20;">
+
+        <Label style="-fx-font-size: 30px; -fx-font-weight: bold;" styleClass="labelTitle" stylesheets="@css/main.css" text="Weather App Login">
+         <font>
+            <Font size="38.0" />
+         </font></Label>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label style="-fx-font-size: 13px;" text="Username:" />
+            <TextField fx:id="usernameField" promptText="Enter your username" style="-fx-font-size: 13px;" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label style="-fx-font-size: 13px;" text="Password: " />
+            <PasswordField fx:id="passwordField" onKeyPressed="#handleEnterPressed" promptText="Enter your password" style="-fx-font-size: 13px;" />
+        </HBox>
+
+        <Button fx:id="loginButton" maxWidth="100" onAction="#handleLogin" style="-fx-font-size: 18px;" styleClass="btn" stylesheets="@css/main.css" text="Login" />
+
+    </VBox>
+
+</AnchorPane>

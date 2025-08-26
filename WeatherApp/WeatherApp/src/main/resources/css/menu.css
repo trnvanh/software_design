@@ -1,4 +1,13 @@
-#menuLayout {
+#menuLayout{
     fx-border-color: transparent transparent transparent black;
     -fx-border-width: 0 2px 0 0;
+}
+
+.btnMenu{
+    -fx-background-color: #7AB2B2;
+    -fx-text-fill: white ;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
 }

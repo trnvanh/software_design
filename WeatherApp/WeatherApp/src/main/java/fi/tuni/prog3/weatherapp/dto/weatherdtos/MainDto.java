@@ -1,25 +1,31 @@
 package fi.tuni.prog3.weatherapp.dto.weatherdtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Represents main weather information received from the OpenWeatherMap API.
  */
+
 public class MainDto {
 
-    private double temp; // Temperature
+    private double temp;
 
-    private double feelsLike; // Human perception of weather
+    @JsonProperty("feels_like")
+    private double feelsLike;
 
-    private double tempMin; // Minimum temperature
+    @JsonProperty("temp_min")
+    private double tempMin;
 
-    private double tempMax; // Maximum temperature
+    @JsonProperty("temp_max")
+    private double tempMax;
 
-    private double pressure; // Atmospheric pressure
+    private double pressure;
 
-    private double humidity; // Humidity percentage
+    private double humidity;
 
-    private double seaLevel; // Atmospheric pressure at sea level
+    private double seaLevel;
 
-    private double groundLevel; // Atmospheric pressure at ground level
+    private double groundLevel;
 
     public double getTemp() {
         return temp;

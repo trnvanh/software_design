@@ -1,8 +1,8 @@
 package fi.tuni.prog3.weatherapp.dto.airdtos;
 
 public class CurrentDataDto {
-    private WeatherDto weather;
     private PollutionDto pollution;
+    private WeatherDto weather;
 
     public PollutionDto getPollution() {
         return pollution;
@@ -12,11 +12,11 @@ public class CurrentDataDto {
         this.pollution = pollution;
     }
 
-    public void setWeather(WeatherDto weather) {
-        this.weather = weather;
-    }
-
     public WeatherDto getWeather() {
         return weather;
+    }
+
+    public void setWeather(WeatherDto weather) {
+        this.weather = weather;
     }
 }

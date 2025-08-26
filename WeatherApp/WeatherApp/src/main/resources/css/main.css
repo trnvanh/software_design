@@ -1,16 +1,16 @@
 #root {
-    -fx-background-image: url('../images/giphy.gif');
+    /*-fx-background-image: url('../images/giphy.gif');*/
     -fx-background-size: cover;
 }
 
 .listComponentPane {
-    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    -fx-background-color: linear-gradient(rgb(122, 178, 178), rgb(122, 178, 178));
     -fx-background-radius: 10px;
 }
 
 
 .componentForecast {
-    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+    -fx-background-color: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
     -fx-background-radius: 10px;
 }
 .componentForecast:hover {
@@ -23,19 +23,40 @@
 }
 
 .componentDetailForecast {
-    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    -fx-background-color: linear-gradient(rgb(122, 178, 178), rgb(122, 178, 178));
 }
 
 #nav {
-    -fx-background-color: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    -fx-background-color: linear-gradient(rgb(122, 178, 178), rgb(122, 178, 178));
 }
 
 .btn {
-    -fx-background-color: rgba(255, 255, 255, 1);
-    -fx-background-radius: 5px;
+    -fx-background-color: #7AB2B2;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
     -fx-cursor: hand;
 }
 
-.btn:hover {
-    -fx-background-color:rgba(0, 255, 255, 1);
+.combo-box {
+    -fx-font-size: 18px;
+}
+
+.layout {
+    -fx-background-color: #CDE8E5;
+}
+
+.labelTitle {
+    -fx-background-color: #7AB2B2;
+    -fx-text-fill: #EEF7FF;
+}
+
+.labelSubTitle {
+    -fx-background-color: #EEF7FF;
+    -fx-text-fill: #7AB2B2;
+}
+
+.componentDetailForecastHeader {
+    -fx-background-color: #5A8787;
 }

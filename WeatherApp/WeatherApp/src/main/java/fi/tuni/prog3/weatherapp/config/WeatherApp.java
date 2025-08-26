@@ -1,16 +1,20 @@
 package fi.tuni.prog3.weatherapp.config;
 
 import fi.tuni.prog3.weatherapp.WeatherSystemApplication;
+import fi.tuni.prog3.weatherapp.controller.LogInController;
 import fi.tuni.prog3.weatherapp.controller.MainViewController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lombok.Setter;
 import net.rgielen.fxweaver.core.FxWeaver;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.Objects;
 
 @Setter
 public class WeatherApp extends Application {
@@ -29,9 +33,14 @@ public class WeatherApp extends Application {
     public void start(Stage stage) {
         try {
             FxWeaver fxWeaver = applicationContext.getBean(FxWeaver.class);
-            Parent root = fxWeaver.loadView(MainViewController.class);
+            Parent root = fxWeaver.loadView(LogInController.class);
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Weather App");
+
+            Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/icon/logo.png")));
+            stage.getIcons().add(icon);
+
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

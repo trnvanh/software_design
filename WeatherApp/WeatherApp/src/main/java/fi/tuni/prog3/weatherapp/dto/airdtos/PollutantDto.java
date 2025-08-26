@@ -1,33 +1,33 @@
 package fi.tuni.prog3.weatherapp.dto.airdtos;
 
 public class PollutantDto {
-    private double concentration;
+    private double conc;
 
-    private double aqiUs;
+    private double aqius;
 
-    private double aqiCn;
+    private double aqicn;
 
-    public double getAqiUs() {
-        return aqiUs;
+    public double getConc() {
+        return conc;
     }
 
-    public double getAqiCn() {
-        return aqiCn;
+    public void setConc(double conc) {
+        this.conc = conc;
     }
 
-    public double getConcentration() {
-        return concentration;
+    public double getAqius() {
+        return aqius;
     }
 
-    public void setAqiUs(double aqiUs) {
-        this.aqiUs = aqiUs;
+    public void setAqius(double aqius) {
+        this.aqius = aqius;
     }
 
-    public void setAqiCn(double aqiCn) {
-        this.aqiCn = aqiCn;
+    public double getAqicn() {
+        return aqicn;
     }
 
-    public void setConcentration(double concentration) {
-        this.concentration = concentration;
+    public void setAqicn(double aqicn) {
+        this.aqicn = aqicn;
     }
 }

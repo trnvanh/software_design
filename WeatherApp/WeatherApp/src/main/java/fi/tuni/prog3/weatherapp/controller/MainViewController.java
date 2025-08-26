@@ -3,80 +3,112 @@ package fi.tuni.prog3.weatherapp.controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 @Component
 @FxmlView("/MainView.fxml")
 public class MainViewController implements Initializable {
-    @FXML
-    private AnchorPane contentId;
+    private static final Logger log = LoggerFactory.getLogger(MainViewController.class);
 
     @FXML
-    private Button Forecast;
+    @Getter
+    private AnchorPane content;
 
+    @FXML
+    private Button btnCurrent;
     @FXML
     private Button btnData;
-
     @FXML
     private Button btnHome;
+    @FXML
+    private Button btnFavorite;
+    @FXML
+    private Button btnHistory;
+    @FXML
+    private Button btnLogOut;
+    @FXML
+    private Button btnAccount;
+
+    @Autowired
+    private FxWeaver fxWeaver;
+
+    private final DataTransferController dataTransferController = DataTransferController.getInstance();
 
     @FXML
-    private Button btnSetting;
+    private Label alertLabel;
+
+    /**
+     * Alert message
+     */
+    public void setAlertMsg(String alertMsg) {
+        alertLabel.setText(alertMsg);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater(this::loadHomeLayout);
+
+        dataTransferController.initialize(fxWeaver, content, btnHome, btnData, btnCurrent, btnFavorite, btnHistory, btnAccount, alertLabel);
+
+        Platform.runLater(this::initHomeView);
     }
 
-    private void loadHomeLayout() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeLayout.fxml"));
-            Parent homeView = loader.load();
-            contentId.getChildren().setAll(homeView);
-        } catch (IOException e) {
+    private void initHomeView() {
+        dataTransferController.loadLayout(HomeController.class);
+    }
 
-        }
+    @FXML
+    void loadHomeLayout(ActionEvent event) {
+        dataTransferController.loadLayout(HomeController.class);
     }
 
     @FXML
     void loadDataLayout(ActionEvent event) {
+        dataTransferController.loadLayout(DataController.class);
     }
 
     @FXML
-    void loadForecastLayout(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ForecastLayout.fxml"));
-        Parent forecastView = loader.load();
-        contentId.getChildren().clear();
-        contentId.getChildren().setAll(forecastView);
-
+    void loadCurrentLayout(ActionEvent event) {
+        dataTransferController.loadLayout(CurrentController.class);
     }
 
     @FXML
-    void loadHomeLayout(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeLayout.fxml"));
-        Parent homeView = loader.load();
-        contentId.getChildren().clear();
-        contentId.getChildren().setAll(homeView);
-
+    void loadFavoriteLayout(ActionEvent event) {
+        dataTransferController.loadLayout(FavoriteController.class);
     }
 
     @FXML
-    void loadSettingLayout(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/SettingLayout.fxml"));
-        Parent settingView = loader.load();
-        contentId.getChildren().clear();
-        contentId.getChildren().setAll(settingView);
+    void loadHistoryLayout(ActionEvent event) {
+        dataTransferController.loadLayout(HistoryController.class); }
 
+    @FXML
+    void loadAccountLayout(ActionEvent event) {
+        dataTransferController.loadLayout(AccountController.class); }
+
+
+    @FXML
+    public void loadLogInLayout(ActionEvent actionEvent) {
+        Stage stage = (Stage) btnLogOut.getScene().getWindow(); // Get current stage
+        Scene mainScene = new Scene(fxWeaver.loadView(LogInController.class)); // Load MainView scene
+
+        stage.setScene(mainScene); // Set the new scene on the stage
+        stage.show(); // Show the main view
     }
-
 }

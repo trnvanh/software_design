@@ -1,17 +1,20 @@
 package fi.tuni.prog3.weatherapp.dto.weatherdtos;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForecastInfoDto {
+@Component
+public class ForeCastInfoDto {
 
-    private List<ForecastDto> list = new ArrayList<>(); // List of forecast data
+    private List<ForecastDto> list = new ArrayList<>();
 
-    private String cod; // Internal parameter
+    private String cod;
 
-    private int message; // Internal parameter
+    private int message;
 
-    private int cnt; // Number of forecasts returned
+    private int cnt;
 
     public List<ForecastDto> getList() {
         return list;

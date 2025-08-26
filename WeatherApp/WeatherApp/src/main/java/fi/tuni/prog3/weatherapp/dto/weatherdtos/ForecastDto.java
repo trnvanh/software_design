@@ -1,26 +1,30 @@
 package fi.tuni.prog3.weatherapp.dto.weatherdtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class ForecastDto {
 
-    private Long dt; // Time of forecast
+    private Long dt;
 
-    private MainDto main; // Main weather information
+    private MainDto main;
 
-    private List<WeatherDto> weather; // Weather condition information
+    private List<WeatherDto> weather;
 
-    private CloudDto clouds; // Cloud data
+    private CloudDto clouds;
 
-    private WindDto wind; // Wind data
+    private WindDto wind;
 
-    private Long visibility; // Visibility in meters
+    private Long visibility;
 
-    private double pop; // Probability of precipitation
+    private double pop;
 
-    private SysDto sys; // Additional system information
+    private SysDto sys;
 
-    private String dtText; // Date and time in text format
+
+    @JsonProperty("dt_txt")
+    private String dtText;
 
     public Long getDt() {
         return dt;

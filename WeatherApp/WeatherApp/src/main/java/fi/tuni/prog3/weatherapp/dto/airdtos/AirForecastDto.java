@@ -1,95 +1,103 @@
 package fi.tuni.prog3.weatherapp.dto.airdtos;
 
 public class AirForecastDto {
-    private String ts; // timestamp
+    private String ts;
 
-    private double aqiUs; // AQI value based on US standards
+    private double aqius;
 
-    private double aqiCn; // AQI value based on China standards
+    private double aqicn;
 
-    private double temperature; // temperature in Celsius
+    private double tp;
 
-    private double minTemperature; // minimum temp in Celsius
+    private double tpMin;
 
-    private double pressure; // atmospheric pressure
+    private double pr;
 
-    private double humidity; // humidity
+    private double hu;
 
-    private double windSpeed; // wind_speed
+    private double ws;
 
-    private double windDirection; // wind_direction
+    private double wd;
 
-    private String iconCode; // weather icon code
+    private String ic;
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
-
-    public void setHumidity(double humidity) {
-        this.humidity = humidity;
-    }
-
-    public void setPressure(double pressure) {
-        this.pressure = pressure;
-    }
-
-    public void setAqiCn(double aqiCn) {
-        this.aqiCn = aqiCn;
-    }
-
-    public void setAqiUs(double aqiUs) {
-        this.aqiUs = aqiUs;
-    }
-
-    public void setIconCode(String iconCode) {
-        this.iconCode = iconCode;
+    public String getTs() {
+        return ts;
     }
 
     public void setTs(String ts) {
         this.ts = ts;
     }
 
-    public void setMinTemperature(double minTemperature) {
-        this.minTemperature = minTemperature;
+    public double getAqius() {
+        return aqius;
     }
 
-    public void setWindDirection(double windDirection) {
-        this.windDirection = windDirection;
+    public void setAqius(double aqius) {
+        this.aqius = aqius;
     }
 
-    public void setWindSpeed(double windSpeed) {
-        this.windSpeed = windSpeed;
+    public double getAqicn() {
+        return aqicn;
     }
 
-    public double getPressure() {
-        return pressure;
+    public void setAqicn(double aqicn) {
+        this.aqicn = aqicn;
     }
 
-    public double getHumidity() {
-        return humidity;
+    public double getTp() {
+        return tp;
     }
 
-    public double getAqiCn() {
-        return aqiCn;
+    public void setTp(double tp) {
+        this.tp = tp;
     }
 
-    public double getAqiUs() {
-        return aqiUs;
+    public double getTpMin() {
+        return tpMin;
     }
 
-    public double getMinTemperature() {
-        return minTemperature;
+    public void setTpMin(double tpMin) {
+        this.tpMin = tpMin;
     }
 
-    public double getTemperature() {
-        return temperature;
+    public double getPr() {
+        return pr;
     }
 
-    public double getWindDirection() {
-        return windDirection;
+    public void setPr(double pr) {
+        this.pr = pr;
     }
 
-    public double getWindSpeed() {
-        return windSpeed;
+    public double getHu() {
+        return hu;
+    }
+
+    public void setHu(double hu) {
+        this.hu = hu;
+    }
+
+    public double getWs() {
+        return ws;
+    }
+
+    public void setWs(double ws) {
+        this.ws = ws;
+    }
+
+    public double getWd() {
+        return wd;
+    }
+
+    public void setWd(double wd) {
+        this.wd = wd;
+    }
+
+    public String getIc() {
+        return ic;
+    }
+
+    public void setIc(String ic) {
+        this.ic = ic;
     }
 }
